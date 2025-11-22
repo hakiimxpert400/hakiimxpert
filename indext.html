@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HAKIIMXPERT Tech</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Reset & base */
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif; }
+    body { line-height: 1.6; color: #333; background: #f7f7f7; }
+    a { text-decoration: none; color: inherit; }
+
+    /* Header */
+    header { background: #0d6efd; color: white; padding: 20px 0; }
+    .container { width: 90%; max-width: 1100px; margin: auto; }
+    nav { display: flex; justify-content: space-between; align-items: center; }
+    nav ul { list-style: none; display: flex; gap: 20px; }
+    nav ul li a { color: white; font-weight: 500; transition: 0.3s; }
+    nav ul li a:hover { text-decoration: underline; }
+
+    /* Hero Section */
+    .hero { background: #0d6efd; color: white; text-align: center; padding: 80px 20px; }
+    .hero h1 { font-size: 2.5rem; margin-bottom: 20px; }
+    .hero p { font-size: 1.2rem; margin-bottom: 30px; }
+    .btn { background: white; color: #0d6efd; padding: 10px 25px; border-radius: 5px; font-weight: bold; transition: 0.3s; }
+    .btn:hover { background: #e0e0e0; }
+
+    /* Sections */
+    section { padding: 60px 20px; }
+    section h2 { text-align: center; margin-bottom: 40px; font-size: 2rem; color: #0d6efd; }
+
+    /* About */
+    .about { max-width: 900px; margin: auto; text-align: center; }
+
+    /* Services */
+    .services { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+    .service-card { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); flex: 1 1 250px; text-align: center; }
+    .service-card h3 { margin-bottom: 15px; color: #0d6efd; }
+
+    /* Contact */
+    .contact-form { max-width: 600px; margin: auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+    .contact-form input, .contact-form textarea { width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #ccc; }
+    .contact-form button { background: #0d6efd; color: white; border: none; padding: 10px 25px; border-radius: 5px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+    .contact-form button:hover { background: #084298; }
+
+    /* Footer */
+    footer { text-align: center; padding: 20px; background: #0d6efd; color: white; }
+    
+    /* Responsive */
+    @media (max-width:768px){
+      nav ul { flex-direction: column; gap: 10px; }
+      .services { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav>
+        <h1>HAKIIMXPERT Tech</h1>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="container">
+      <h1>Welcome to HAKIIMXPERT Tech</h1>
+      <p>Your IT Solutions, Web Development, and Tech Services all in one place.</p>
+      <a href="#contact" class="btn">Get in Touch</a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about" id="about">
+    <div class="container">
+      <h2>About Us</h2>
+      <p>HAKIIMXPERT Tech is a professional student project showcasing IT skills, web development, and tech solutions. This website is built for academic purposes and demonstrates responsive and modern design.</p>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="services" id="services">
+    <div class="container">
+      <h2>Our Services</h2>
+      <div class="service-card">
+        <h3>Web Development</h3>
+        <p>Create responsive and modern websites for businesses and projects.</p>
+      </div>
+      <div class="service-card">
+        <h3>IT Support</h3>
+        <p>Network setup, hardware troubleshooting, and system maintenance.</p>
+      </div>
+      <div class="service-card">
+        <h3>App Development</h3>
+        <p>Develop mobile applications for Android and iOS platforms.</p>
+      </div>
+      <div class="service-card">
+        <h3>Design & Branding</h3>
+        <p>Professional logos, posters, UI/UX designs, and branding services.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <div class="contact-form">
+        <form onsubmit="submitForm(event)">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+        <p id="success-msg" style="color:green; text-align:center; display:none; margin-top:10px;">Message sent successfully!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 HAKIIMXPERT Tech. All rights reserved.</p>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    function submitForm(event) {
+      event.preventDefault();
+      document.getElementById('success-msg').style.display = 'block';
+      event.target.reset();
+    }
+  </script>
+
+</body>
+</html>
